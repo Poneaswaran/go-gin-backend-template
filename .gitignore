@@ -1,0 +1,88 @@
+# ---------------------------
+
+# Go build artifacts
+
+# ---------------------------
+
+bin/
+build/
+dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go workspace files
+
+*.test
+*.out
+
+# ---------------------------
+
+# Dependency directories
+
+# ---------------------------
+
+vendor/
+
+# ---------------------------
+
+# Database files
+
+# ---------------------------
+
+*.db
+*.sqlite
+*.sqlite3
+
+# Example SQLite database
+
+test.db
+
+# ---------------------------
+
+# Environment variables
+
+# ---------------------------
+
+.env
+.env.local
+.env.*
+
+# ---------------------------
+
+# Logs
+
+# ---------------------------
+
+*.log
+
+# ---------------------------
+
+# OS files
+
+# ---------------------------
+
+.DS_Store
+Thumbs.db
+
+# ---------------------------
+
+# IDE / Editor settings
+
+# ---------------------------
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---------------------------
+
+# Temporary files
+
+# ---------------------------
+
+tmp/
+temp/
