@@ -1,7 +1,7 @@
 package database
 
 import (
-	"fmt"
+	"os"
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
@@ -9,17 +9,11 @@ import (
 	_ "modernc.org/sqlite"
 )
 
-var DB *gorm.DB
-
-func ConnectDatabase() {
-
-	db, err := gorm.Open(sqlite.Open("test.db?_pragma=busy_timeout(5000)"), &gorm.Config{})
-
-	if err != nil {
-		panic(err)
+func connectSQLite() (*gorm.DB, error) {
+	dsn := os.Getenv("SQLITE_DSN")
+	if dsn == "" {
+		dsn = "test.db?_pragma=busy_timeout(5000)"
 	}
 
-	DB = db
-
-	fmt.Println("Database connected 🚀")
+	return gorm.Open(sqlite.Open(dsn), &gorm.Config{})
 }
